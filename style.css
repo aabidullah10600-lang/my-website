@@ -1,0 +1,259 @@
+
+/* ===== SPIDER-MAN PORTFOLIO STYLE ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050816;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+body {
+    background-image:
+        radial-gradient(circle at 20% 20%, #142b60 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #650b20 0%, transparent 35%);
+    background-attachment: fixed;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(5, 8, 22, 0.9);
+    border-bottom: 1px solid #e62429;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: #ff2638;
+    font-size: 27px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #ff2638;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff2638;
+    text-shadow: 0 0 10px #ff2638;
+}
+
+/* Main hero section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Spider web pattern */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-radial-gradient(
+            circle at top right,
+            transparent 0 35px,
+            rgba(255, 255, 255, 0.12) 36px 37px,
+            transparent 38px 65px
+        );
+    pointer-events: none;
+    animation: webGlow 4s ease-in-out infinite alternate;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 76px);
+    position: relative;
+    animation: fadeUp 1s ease both;
+}
+
+.hero h1 span {
+    color: #ff2638;
+    text-shadow: 0 0 20px rgba(255, 38, 56, 0.8);
+}
+
+.hero p {
+    margin: 18px 0 28px;
+    color: #c7d5ff;
+    font-size: 18px;
+    position: relative;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    margin: 8px;
+    background: #e62429;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ff5660;
+    border-radius: 30px;
+    box-shadow: 0 0 18px rgba(230, 36, 41, 0.45);
+    transition: 0.3s;
+    position: relative;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #e62429;
+    transform: translateY(-5px);
+    box-shadow: 0 0 28px #e62429;
+}
+
+/* Content sections */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    color: #ff2638;
+    font-size: 35px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(255, 38, 56, 0.4);
+}
+
+/* About and project cards */
+.card {
+    background: rgba(18, 29, 57, 0.8);
+    border: 1px solid rgba(255, 38, 56, 0.5);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 15px auto;
+    max-width: 650px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #ff2638;
+    box-shadow: 0 0 25px rgba(255, 38, 56, 0.35);
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.skills span {
+    padding: 12px 20px;
+    background: #101c3a;
+    border: 1px solid #168bff;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: #168bff;
+    box-shadow: 0 0 15px #168bff;
+    transform: scale(1.08);
+}
+
+/* Contact links */
+a {
+    transition: 0.3s;
+}
+
+.contact a {
+    color: #ff5660;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff2638;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #03050d;
+    border-top: 1px solid #e62429;
+    color: #aab8d8;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes webGlow {
+    from {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.85;
+        transform: scale(1.04);
+    }
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

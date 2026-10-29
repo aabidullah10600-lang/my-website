@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spider-Man Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #111;
+    border-bottom: 2px solid #e62429;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e62429;
+    text-shadow: 0 0 15px red;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e62429;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    background:
+        radial-gradient(circle at center, #8b1018 0%, #25060a 40%, #080808 75%);
+}
+
+.hero-content {
+    animation: appear 1.5s ease;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    color: #e62429;
+    text-shadow: 0 0 20px red;
+    animation: glow 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #e62429;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #e62429;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: white;
+    color: red;
+}
+
+.web {
+    position: absolute;
+    top: -80px;
+    right: 8%;
+    width: 180px;
+    height: 280px;
+    border-left: 2px solid #aaa;
+    border-right: 2px solid #aaa;
+    border-radius: 50%;
+    opacity: 0.45;
+    animation: swing 4s ease-in-out infinite;
+}
+
+.web::before,
+.web::after {
+    content: "";
+    position: absolute;
+    inset: 20px -30px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.web::after {
+    inset: 50px -45px;
+}
+
+section {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+section h2 {
+    color: #e62429;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 260px;
+    padding: 30px 20px;
+    background: #151515;
+    border: 1px solid #e62429;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 0 25px #e62429;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #ff4545;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    color: #aaa;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 35px red, 0 0 60px #e62429; }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 7px;
+        display: inline-block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SPIDER-MAN</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#powers">Powers</a>
+    </nav>
+</header>
+
+<main>
+    <div class="hero" id="home">
+        <div class="web"></div>
+
+        <div class="hero-content">
+            <h1>YOUR FRIENDLY<br>NEIGHBORHOOD</h1>
+            <p>With great power comes great responsibility.</p>
+            <a class="btn" href="#about">EXPLORE THE HERO</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Spider-Man</h2>
+        <p>
+            A hero who protects the city, swings between skyscrapers,
+            and never gives up when people need help.
+        </p>
+    </section>
+
+    <section id="powers">
+        <h2>Super Powers</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>🕸️ Web Slinging</h3>
+                <p>Swings between buildings using amazing web technology.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Spider Sense</h3>
+                <p>Detects danger and reacts quickly to protect others.</p>
+            </div>
+
+            <div class="card">
+                <h3>🦸 Super Strength</h3>
+                <p>Uses incredible strength, agility, and climbing skills.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Spider-Man Fan Website | Created with ❤️</p>
+</footer>
+
+</body>
+</html>
